@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Polo Pet Shop &amp; Agro | Pet shop com entrega no Jardim Montreal, Indaiatuba</title>
+<meta name="description" content="Ração, farmácia veterinária, acessórios, piscina e jardim no Jardim Montreal, em Indaiatuba. Veterinário na loja e entrega no mesmo dia pelo WhatsApp. 4,7★ no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="preload" as="image" href="uploads/anexar-claude-design/hero-01_pomerania-bolinha.jpg">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFF8EE;color:#1F2937;font-family:'Nunito',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+img{display:block;max-width:100%}
+a{color:#09448B;text-decoration:none}
+a:hover{color:#1BB68C}
+button{font-family:inherit}
+input::placeholder{color:#94A3B8}
+.ti{line-height:1}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes kbDoor{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-3%,2%)}}
+@keyframes blob{0%,100%{border-radius:58% 42% 50% 50% / 48% 56% 44% 52%}33%{border-radius:44% 56% 40% 60% / 58% 42% 58% 42%}66%{border-radius:52% 48% 60% 40% / 42% 60% 46% 54%}}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-22px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-14px,16px)}}
+@keyframes ring{0%,82%{transform:scale(1);opacity:0}86%{opacity:.7}100%{transform:scale(1.45,1.7);opacity:0}}
+@keyframes pawDown{0%{transform:translateY(-8px);opacity:0}40%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}12%{opacity:.9}100%{transform:translateY(-900px) scale(1.1);opacity:0}}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pawStep{0%,100%{opacity:0;transform:scale(.7)}12%,40%{opacity:.45;transform:scale(1)}60%{opacity:0;transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+[data-motion="off"] *{animation:none!important}
+</style>
+</helmet>
+<div data-motion="{{ motion }}" style="position:relative">
+
+<!-- HEADER -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:{{ headerBg }};box-shadow:{{ headerShadow }};padding:{{ headerPad }};transition:background .35s ease, box-shadow .35s ease, padding .35s ease">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px);display:flex;align-items:center;gap:24px">
+    <a href="#top" aria-label="Polo Pet Shop e Agro" style="display:block;flex:none">
+      <img src="uploads/anexar-claude-design/logo-polo_cor_transparente.png" alt="Polo Pet Shop e Agro" width="150" height="103" style="width:clamp(104px,11vw,150px);height:auto;transform:{{ logoScale }};transform-origin:left center;transition:transform .35s ease">
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="margin-left:auto;display:flex;align-items:center;gap:28px">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+          <a href="{{ n.href }}" style="color:#fff;font-family:'Baloo 2',sans-serif;font-weight:600;font-size:17px" style-hover="color:#7FE0C4">{{ n.label }}</a>
+        </sc-for>
+      </nav>
+      <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1BB68C;color:#fff;font-weight:800;font-size:15px;padding:11px 18px;border-radius:999px;box-shadow:0 6px 18px rgba(27,182,140,.35)" style-hover="background:#16a07b;color:#fff"><i class="ti ti-brand-whatsapp" style="font-size:20px"></i>Pedir no WhatsApp</a>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ openMenu }}" aria-label="Abrir menu" style="margin-left:auto;width:48px;height:48px;border-radius:16px;border:0;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;cursor:pointer"><i class="ti ti-menu-2" style="font-size:26px"></i></button>
+    </sc-if>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:70;background:rgba(6,30,62,.5);opacity:{{ menuOverlayOp }};pointer-events:{{ menuPE }};transition:opacity .3s"></div>
+<aside style="position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(86vw,360px);background:#09448B;color:#fff;padding:24px;display:flex;flex-direction:column;gap:8px;transform:{{ menuT }};transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 40px rgba(0,0,0,.25)">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+    <img src="uploads/anexar-claude-design/logo-polo_cor_transparente.png" alt="Polo" width="110" height="76" style="width:110px;height:auto">
+    <button onClick="{{ closeMenu }}" aria-label="Fechar menu" style="width:48px;height:48px;border-radius:16px;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer"><i class="ti ti-x" style="font-size:24px"></i></button>
+  </div>
+  <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+    <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:26px;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.12)">{{ n.label }}</a>
+  </sc-for>
+  <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" style="margin-top:20px;display:flex;justify-content:center;align-items:center;gap:10px;background:#1BB68C;color:#fff;font-weight:800;font-size:17px;padding:16px;border-radius:999px"><i class="ti ti-brand-whatsapp" style="font-size:22px"></i>Pedir no WhatsApp</a>
+  <p style="margin:auto 0 0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.75)">R. Winnipeg, 311 – Jardim Montreal Residence, Indaiatuba/SP<br>Seg a sex 8h–18h30 · Sáb 8h–15h</p>
+</aside>
+
+<!-- HERO -->
+<section id="top" style="position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 90% at 85% 40%, #0B56AD 0%, rgba(11,86,173,0) 60%), linear-gradient(165deg,#0A4E9C 0%,#09448B 50%,#06336B 100%);min-height:{{ heroMinH }};padding:{{ heroPad }};display:flex;flex-direction:column;justify-content:center">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:absolute;width:22px;height:22px;border-radius:50%;background:#F68121;left:47%;top:74%;animation:float 9s ease-in-out infinite"></div>
+    <div style="position:absolute;width:14px;height:14px;border-radius:50%;background:#0793C8;left:40%;top:7%;animation:floatB 11s ease-in-out infinite"></div>
+    <div style="position:absolute;width:30px;height:30px;border-radius:50%;background:#BC3091;right:6%;top:18%;animation:float 13s ease-in-out infinite;opacity:.9"></div>
+    <div style="position:absolute;width:18px;height:18px;border-radius:50%;background:#8CC640;left:50%;bottom:20%;animation:floatB 10s ease-in-out infinite"></div>
+    <div style="position:absolute;width:12px;height:12px;border-radius:50%;background:#F68121;right:42%;bottom:30%;animation:float 8s ease-in-out infinite"></div>
+    <div style="position:absolute;width:40px;height:40px;border-radius:50%;border:3px solid #8CC640;right:3%;bottom:26%;animation:floatB 14s ease-in-out infinite;opacity:.7"></div>
+  </div>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;height:54svh;min-height:330px;overflow:hidden;border-radius:0 0 36px 36px;margin-bottom:28px">
+      <div data-parallax="-0.12" style="position:absolute;inset:-8% 0">
+        <img src="uploads/anexar-claude-design/hero-02_cocker-bandana-tigela.jpg" alt="Cocker de bandana ao lado da tigela" width="1080" height="907" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kb 20s ease-in-out infinite alternate">
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,68,139,.75) 0%,rgba(9,68,139,0) 30%,rgba(9,68,139,0) 70%,rgba(9,68,139,.55) 100%)"></div>
+      <div style="position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:6px;background:#fff;color:#09448B;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.18)"><i class="ti ti-star-filled" style="color:#F68121"></i>4,7 no Google · 76 avaliações</div>
+    </div>
+  </sc-if>
+
+  <div style="position:relative;width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:grid;grid-template-columns:{{ heroCols }};gap:clamp(24px,5vw,64px);align-items:center">
+    <div style="position:relative;z-index:2">
+      <div data-reveal="up" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:700;color:#fff">
+        <span style="width:8px;height:8px;border-radius:50%;background:#1BB68C;flex:none"></span>Pet shop · Farmácia vet · Piscina e jardim · Indaiatuba
+      </div>
+      <div style="position:relative">
+        <h1 data-reveal="up" data-delay="100" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(44px,6.6vw,86px);line-height:.98;letter-spacing:-.01em;margin:22px 0 0;text-wrap:balance">Tudo pro seu pet.<br><span style="color:#6FDDBE">Entregue <span style="position:relative;display:inline-block;color:#fff">hoje<svg data-underline="" viewBox="0 0 220 24" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-4%;bottom:-.14em;width:108%;height:.32em;overflow:visible"><path d="M4 16 C 46 4, 98 3, 142 10 S 196 18, 216 7" fill="none" stroke="#F68121" stroke-width="8" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"></path></svg></span>.</span></h1>
+        <div data-ball="" aria-hidden="true" style="position:absolute;right:{{ ballRight }};top:{{ ballTop }};width:46px;height:46px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 35% 30%,#E8F76A,#C3DB2C 60%,#A8C21E);box-shadow:0 10px 20px rgba(0,0,0,.25)">
+          <span style="position:absolute;top:0;left:-62%;width:100%;height:100%;border-radius:50%;border:3px solid rgba(255,255,255,.95)"></span>
+          <span style="position:absolute;top:0;right:-62%;width:100%;height:100%;border-radius:50%;border:3px solid rgba(255,255,255,.95)"></span>
+        </div>
+      </div>
+      <p data-reveal="up" data-delay="200" style="font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:rgba(255,255,255,.9);margin:24px 0 0;max-width:34em;text-wrap:pretty">Ração, petisco, remédio e acessório pra cães, gatos e pequenos pets, mais produtos pra piscina e jardim. Pediu pelo WhatsApp, a gente leva na sua casa no mesmo dia.</p>
+      <div data-reveal="up" data-delay="300" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+        <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" style="position:relative;display:inline-flex;align-items:center;gap:10px;background:#1BB68C;color:#fff;font-weight:800;font-size:18px;padding:17px 28px;border-radius:999px;box-shadow:0 10px 26px rgba(27,182,140,.4)" style-hover="background:#16a07b;color:#fff">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:999px;border:2px solid #1BB68C;animation:ring 6s ease-out infinite"></span>
+          <i class="ti ti-brand-whatsapp" style="font-size:24px"></i>Pedir no WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-23.0583591,-47.2266579" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;border:2px solid rgba(255,255,255,.85);color:#fff;font-weight:800;font-size:18px;padding:15px 26px;border-radius:999px" style-hover="background:#fff;color:#09448B"><i class="ti ti-map-pin" style="font-size:22px"></i>Como chegar</a>
+      </div>
+    </div>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="position:relative;z-index:1">
+        <div data-mouse="22" style="position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-4% -3% -6% 4%;background:#1BB68C;opacity:.9;animation:blob 18s ease-in-out infinite reverse"></div>
+          <div style="position:relative;aspect-ratio:1 / .95;overflow:hidden;animation:blob 16s ease-in-out infinite;box-shadow:0 30px 60px rgba(0,0,0,.3);border:6px solid #fff">
+            <img src="uploads/anexar-claude-design/hero-01_pomerania-bolinha.jpg" alt="Lulu da Pomerânia brincando com bolinha" width="1080" height="907" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% 60%;animation:kb 20s ease-in-out infinite alternate">
+          </div>
+        </div>
+        <div style="position:absolute;left:-6%;bottom:8%;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#09448B;padding:12px 18px;border-radius:20px;box-shadow:0 16px 36px rgba(0,0,0,.25);animation:float 7s ease-in-out infinite">
+          <i class="ti ti-star-filled" style="font-size:24px;color:#F68121"></i>
+          <span style="display:flex;flex-direction:column;line-height:1.15"><strong style="font-family:'Baloo 2',sans-serif;font-size:20px;font-weight:800">4,7 no Google</strong><span style="font-size:13px;font-weight:700;color:#4B5563">76 avaliações</span></span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+
+  <a href="#confianca" aria-label="Rolar para baixo" style="position:absolute;left:50%;bottom:{{ scrollCueB }};transform:translateX(-50%);color:#fff;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;font-weight:700;opacity:.85">
+    <i class="ti ti-paw-filled" style="font-size:22px;animation:pawDown 2.2s ease-in-out infinite"></i>
+  </a>
+</section>
+
+<!-- CONFIANÇA -->
+<div id="confianca" style="position:relative;z-index:3;max-width:1240px;margin:-64px auto 0;padding:0 clamp(16px,4vw,40px)">
+  <div style="background:#fff;border-radius:28px;box-shadow:0 20px 50px rgba(9,68,139,.12);padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:clamp(16px,2.5vw,28px)">
+    <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+      <div data-reveal="up" data-delay="{{ t.delay }}" style="display:flex;align-items:center;gap:14px;min-width:0">
+        <span style="flex:none;width:54px;height:54px;border-radius:18px;background:{{ t.bg }};color:{{ t.color }};display:grid;place-items:center"><i class="ti {{ t.icon }}" style="font-size:28px"></i></span>
+        <span style="display:flex;flex-direction:column;min-width:0">
+          <strong style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:18px;line-height:1.15;color:#09448B">{{ t.title }}</strong>
+          <span style="font-size:14px;color:#4B5563;line-height:1.35">{{ t.pre }}<span data-counter="{{ t.count }}">{{ t.count }}</span>{{ t.sub }}</span>
+        </span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<!-- MONTE SEU PEDIDO -->
+<section id="pedido" style="position:relative;overflow:hidden;background:#E3F6EF;padding:clamp(72px,9vw,120px) 0;margin-top:clamp(-48px,-4vw,-32px);scroll-margin-top:60px">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;color:#1BB68C">
+    <i class="ti ti-paw-filled" style="position:absolute;left:4%;top:14%;font-size:64px;opacity:.08;transform:rotate(-20deg)"></i>
+    <i class="ti ti-paw-filled" style="position:absolute;left:38%;top:6%;font-size:40px;opacity:.07;transform:rotate(15deg)"></i>
+    <i class="ti ti-paw-filled" style="position:absolute;right:6%;top:30%;font-size:80px;opacity:.06;transform:rotate(30deg)"></i>
+    <i class="ti ti-paw-filled" style="position:absolute;left:12%;bottom:8%;font-size:48px;opacity:.07;transform:rotate(-40deg)"></i>
+    <i class="ti ti-paw-filled" style="position:absolute;right:30%;bottom:4%;font-size:56px;opacity:.06;transform:rotate(10deg)"></i>
+  </div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:grid;grid-template-columns:{{ orderCols }};gap:clamp(28px,4vw,56px);align-items:start">
+    <div>
+      <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:0;text-wrap:balance">Sua ração está acabando?</h2>
+      <p data-reveal="up" data-delay="80" style="font-size:18px;line-height:1.55;color:#374151;margin:14px 0 0;max-width:32em">Monte o pedido aqui que a gente já recebe tudo certinho no WhatsApp.</p>
+
+      <div data-reveal="up" data-delay="140" style="margin-top:32px;background:#fff;border-radius:28px;padding:clamp(20px,3vw,32px);box-shadow:0 16px 40px rgba(9,68,139,.08);display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:30px;height:30px;border-radius:50%;background:#09448B;color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;flex:none">1</span><strong style="font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:700;color:#09448B">Pra quem?</strong></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ petChips }}" as="c" hint-placeholder-count="5">
+              <button type="button" onClick="{{ c.onClick }}" aria-pressed="{{ c.on }}" style="display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:999px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};font-weight:800;font-size:15px;cursor:pointer;transition:background .2s, color .2s, border-color .2s"><i class="ti {{ c.icon }}" style="font-size:20px"></i>{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="width:30px;height:30px;border-radius:50%;background:#09448B;color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;flex:none">2</span><strong style="font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:700;color:#09448B">O que precisa?</strong><span style="font-size:14px;color:#6B7280">pode marcar mais de um</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ needChips }}" as="c" hint-placeholder-count="7">
+              <button type="button" onClick="{{ c.onClick }}" aria-pressed="{{ c.on }}" style="display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:999px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};font-weight:800;font-size:15px;cursor:pointer;transition:background .2s, color .2s, border-color .2s"><i class="ti {{ c.icon }}" style="font-size:20px"></i>{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:14px">
+          <span style="display:flex;align-items:center;gap:10px"><span style="width:30px;height:30px;border-radius:50%;background:#09448B;color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;flex:none">3</span><strong style="font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:700;color:#09448B">Marca e tamanho (se souber)</strong></span>
+          <input type="text" value="{{ brand }}" onChange="{{ onBrand }}" placeholder="Ex.: PremieR filhote 15 kg" style="width:100%;min-height:52px;padding:12px 18px;border-radius:16px;border:2px solid #D5E6E0;font-family:inherit;font-size:16px;color:#1F2937;outline:none;background:#FBFEFD" style-focus="border-color:#1BB68C">
+        </label>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:30px;height:30px;border-radius:50%;background:#09448B;color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;flex:none">4</span><strong style="font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:700;color:#09448B">Entrega ou retirada?</strong></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ modeChips }}" as="c" hint-placeholder-count="2">
+              <button type="button" onClick="{{ c.onClick }}" aria-pressed="{{ c.on }}" style="display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:999px;border:2px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};font-weight:800;font-size:15px;cursor:pointer;transition:background .2s, color .2s, border-color .2s"><i class="ti {{ c.icon }}" style="font-size:20px"></i>{{ c.label }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ isDelivery }}" hint-placeholder-val="{{ false }}">
+            <input type="text" value="{{ bairro }}" onChange="{{ onBairro }}" placeholder="Bairro" aria-label="Bairro" style="width:100%;min-height:52px;padding:12px 18px;border-radius:16px;border:2px solid #D5E6E0;font-family:inherit;font-size:16px;color:#1F2937;outline:none;background:#FBFEFD" style-focus="border-color:#1BB68C">
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;display:flex;flex-direction:column;gap:20px">
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative">
+          <div data-parallax="-0.08" style="border-radius:28px;overflow:hidden;aspect-ratio:4 / 4.4;box-shadow:0 24px 50px rgba(9,68,139,.18);border:6px solid #fff">
+            <img src="uploads/anexar-claude-design/hero-03_gatinho-bola-croche.jpg" alt="Gatinho com bola de crochê" loading="lazy" width="900" height="990" style="width:100%;height:100%;object-fit:cover;animation:kb 22s ease-in-out infinite alternate">
+          </div>
+        </div>
+      </sc-if>
+      <div data-reveal="up" style="position:relative;margin-top:{{ bubbleTop }};background:#EFE7DD;border-radius:24px;padding:16px;box-shadow:0 20px 44px rgba(9,68,139,.18);border:1px solid rgba(0,0,0,.04)">
+        <div style="display:flex;align-items:center;gap:10px;padding:2px 4px 12px">
+          <span style="width:36px;height:36px;border-radius:50%;background:#09448B;display:grid;place-items:center;color:#fff"><i class="ti ti-paw-filled" style="font-size:18px"></i></span>
+          <span style="display:flex;flex-direction:column;line-height:1.2"><strong style="font-size:15px;color:#1F2937">Polo Pet Shop · Montreal</strong><span style="font-size:12px;color:#4B5563">(19) 99624-7872</span></span>
+          <i class="ti ti-brand-whatsapp" style="margin-left:auto;font-size:22px;color:#1BB68C"></i>
+        </div>
+        <div style="margin-left:auto;max-width:94%;background:#DCF8C6;border-radius:16px 4px 16px 16px;padding:12px 14px 8px;box-shadow:0 1px 1px rgba(0,0,0,.08)">
+          <p style="margin:0;font-size:15px;line-height:1.5;color:{{ msgColor }};white-space:pre-wrap;word-break:break-word">{{ preview }}</p>
+          <div style="display:flex;justify-content:flex-end;align-items:center;gap:4px;font-size:11px;color:#4B5563;margin-top:4px">{{ nowTime }}<i class="ti ti-checks" style="font-size:16px;color:#34B7F1"></i></div>
+        </div>
+      </div>
+      <a href="{{ orderHref }}" target="_blank" rel="noopener" style="display:flex;justify-content:center;align-items:center;gap:10px;background:#1BB68C;color:#fff;font-weight:800;font-size:18px;padding:18px 24px;border-radius:999px;box-shadow:0 12px 28px rgba(27,182,140,.35)" style-hover="background:#16a07b;color:#fff"><i class="ti ti-send" style="font-size:22px"></i>Enviar pedido no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section id="produtos" style="background:#FFF8EE;padding:clamp(72px,9vw,120px) 0;scroll-margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <div style="text-align:center;max-width:720px;margin:0 auto">
+      <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:0;text-wrap:balance">Do pote de ração à horta do quintal</h2>
+      <p data-reveal="up" data-delay="80" style="font-size:18px;line-height:1.55;color:#4B5563;margin:14px 0 0;text-wrap:pretty">É pet shop, é farmácia, é agropecuária. Tudo no mesmo lugar, perto da sua casa.</p>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:44px auto 0;padding:0 clamp(20px,4vw,40px)">
+    <div style="display:grid;grid-auto-flow:{{ catFlow }};grid-template-columns:{{ catCols }};grid-auto-columns:{{ catAutoCols }};gap:clamp(16px,2vw,24px);overflow-x:{{ catOverflow }};scroll-snap-type:x mandatory;padding:8px 4px 20px;margin:0 -4px;scrollbar-width:none">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+        <div data-reveal="{{ catReveal }}" data-delay="{{ c.delay }}" style="scroll-snap-align:center;min-width:0">
+          <article data-tilt="" onMouseEnter="{{ c.onEnter }}" onMouseLeave="{{ c.onLeave }}" style="height:100%;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(9,68,139,.08);display:flex;flex-direction:column">
+            <div style="position:relative;aspect-ratio:4 / 3;overflow:hidden;background:{{ c.photoBg }}">
+              <sc-if value="{{ c.photo }}" hint-placeholder-val="{{ true }}">
+                <img src="{{ c.img }}" alt="{{ c.title }}" loading="lazy" width="800" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:{{ c.imgT }};transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+              </sc-if>
+              <sc-if value="{{ c.alt }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ c.altImg }}" alt="Aquários com peixes" loading="lazy" width="800" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ c.altOp }};transform:{{ c.imgT }};transition:opacity .6s ease, transform .8s cubic-bezier(.2,.7,.2,1)">
+              </sc-if>
+              <sc-if value="{{ c.pool }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;inset:0;display:grid;place-items:center;color:#fff">
+                  <i class="ti ti-pool" style="font-size:72px;opacity:.95"></i>
+                  <span style="position:absolute;top:14px;right:14px;font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px">piscina-01</span>
+                  <div style="position:absolute;left:0;right:0;bottom:0;height:70px;overflow:hidden">
+                    <svg viewBox="0 0 400 40" preserveAspectRatio="none" style="position:absolute;bottom:18px;left:0;width:200%;height:36px;animation:wave 7s linear infinite"><path d="M0 20 Q50 0 100 20 T200 20 T300 20 T400 20 V40 H0Z" fill="rgba(255,255,255,.18)"></path></svg>
+                    <svg viewBox="0 0 400 40" preserveAspectRatio="none" style="position:absolute;bottom:0;left:0;width:200%;height:40px;animation:wave 4.5s linear infinite reverse"><path d="M0 20 Q50 2 100 20 T200 20 T300 20 T400 20 V40 H0Z" fill="rgba(255,255,255,.3)"></path></svg>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="position:relative;padding:34px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1">
+              <span data-icon="" style="position:absolute;top:-26px;left:20px;width:52px;height:52px;border-radius:18px;background:{{ c.color }};color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px rgba(0,0,0,.15);border:3px solid #fff"><i class="ti {{ c.icon }}" style="font-size:26px"></i></span>
+              <h3 style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:23px;line-height:1.1;color:#09448B;margin:0">{{ c.title }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.5;color:#4B5563">{{ c.desc }}</p>
+              <a href="{{ c.href }}" target="_blank" rel="noopener" style="margin-top:auto;padding-top:12px;font-weight:800;font-size:15px;color:#13926F" style-hover="color:#09448B">Pedir no WhatsApp ›</a>
+            </div>
+          </article>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- VETERINÁRIO -->
+<section id="veterinario" style="position:relative;overflow:hidden;background:#09448B;color:#fff;padding:clamp(72px,9vw,120px) 0;scroll-margin-top:60px">
+  <div aria-hidden="true" style="position:absolute;width:420px;height:420px;border-radius:50%;background:#0B56AD;left:-140px;bottom:-160px"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,6vw,80px);align-items:center">
+    <div style="position:relative">
+      <div aria-hidden="true" style="position:absolute;inset:6% -4% -4% 6%;border-radius:32px;background:#1BB68C"></div>
+      <div data-clip="" style="position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4 / 4.3">
+        <img src="uploads/anexar-claude-design/farm-02_shampoos.jpg" alt="Prateleira de shampoos e produtos veterinários" loading="lazy" width="900" height="970" style="width:100%;height:100%;object-fit:cover;animation:kb 22s ease-in-out infinite alternate">
+      </div>
+    </div>
+    <div>
+      <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;margin:0;text-wrap:balance">Cuidado de verdade, aqui do lado</h2>
+      <p data-reveal="up" data-delay="80" style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.9);margin:18px 0 0;max-width:32em;text-wrap:pretty">Consultório veterinário dentro da loja, vacinas importadas e orientação na hora de escolher o remédio certo.</p>
+      <ul style="list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px">
+        <sc-for list="{{ vetList }}" as="v" hint-placeholder-count="4">
+          <li data-reveal="up" data-delay="{{ v.delay }}" style="display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700"><span style="width:30px;height:30px;border-radius:50%;background:#1BB68C;display:grid;place-items:center;flex:none"><i class="ti ti-check" style="font-size:18px"></i></span>{{ v.label }}</li>
+        </sc-for>
+      </ul>
+      <a data-reveal="up" data-delay="200" href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20veterin%C3%A1ria" target="_blank" rel="noopener" style="margin-top:34px;display:inline-flex;align-items:center;gap:10px;background:#F68121;color:#fff;font-weight:800;font-size:18px;padding:17px 28px;border-radius:999px;box-shadow:0 12px 28px rgba(246,129,33,.35)" style-hover="background:#e5700f;color:#fff"><i class="ti ti-calendar-heart" style="font-size:22px"></i>Agendar consulta</a>
+    </div>
+  </div>
+</section>
+
+<!-- A LOJA -->
+<section id="loja" style="background:#fff;padding:clamp(72px,9vw,120px) 0;scroll-margin-top:60px;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <div style="max-width:720px">
+      <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:0;text-wrap:balance">Loja de bairro, variedade de loja grande</h2>
+      <p data-reveal="up" data-delay="80" style="font-size:18px;line-height:1.55;color:#4B5563;margin:14px 0 0">Prateleiras cheias, ração a granel e aquários com peixinhos.</p>
+    </div>
+    <div style="margin-top:44px;display:flex;gap:clamp(10px,1.6vw,20px);align-items:flex-start">
+      <sc-for list="{{ galleryCols }}" as="col" hint-placeholder-count="3">
+        <div data-parallax="{{ col.speed }}" style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.6vw,20px);padding-top:{{ col.pad }}">
+          <sc-for list="{{ col.items }}" as="g" hint-placeholder-count="3">
+            <button type="button" data-reveal="up" onClick="{{ g.open }}" aria-label="Ampliar foto: {{ g.label }}" style="position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;border-radius:22px;overflow:hidden;aspect-ratio:{{ g.ar }};background:#EEF2F6">
+              <img src="{{ g.src }}" alt="{{ g.label }}" loading="lazy" width="800" height="1000" style="width:100%;height:100%;object-fit:cover;animation:{{ g.anim }}">
+              <sc-if value="{{ g.big }}" hint-placeholder-val="{{ false }}">
+                <span style="position:absolute;left:12px;bottom:12px;background:#fff;color:#09448B;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.15)">{{ g.label }}</span>
+              </sc-if>
+            </button>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLb }}" role="dialog" aria-modal="true" style="position:fixed;inset:0;z-index:100;background:rgba(5,22,46,.9);display:grid;place-items:center;padding:24px">
+    <img src="{{ lbSrc }}" alt="{{ lbLabel }}" style="max-width:min(92vw,1100px);max-height:84vh;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.5)">
+    <button onClick="{{ closeLb }}" aria-label="Fechar" style="position:fixed;top:18px;right:18px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:#09448B;display:grid;place-items:center;cursor:pointer"><i class="ti ti-x" style="font-size:26px"></i></button>
+    <button onClick="{{ prevLb }}" aria-label="Anterior" style="position:fixed;left:14px;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#09448B;display:grid;place-items:center;cursor:pointer"><i class="ti ti-chevron-left" style="font-size:26px"></i></button>
+    <button onClick="{{ nextLb }}" aria-label="Próxima" style="position:fixed;right:14px;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#09448B;display:grid;place-items:center;cursor:pointer"><i class="ti ti-chevron-right" style="font-size:26px"></i></button>
+  </div>
+</sc-if>
+
+<!-- MARCAS -->
+<section style="background:#FFF8EE;padding:clamp(56px,7vw,88px) 0;overflow:hidden">
+  <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+    <div style="display:flex;width:max-content;animation:marquee 45s linear infinite" style-hover="animation-play-state:paused">
+      <sc-for list="{{ brands }}" as="b" hint-placeholder-count="14">
+        <span style="display:flex;align-items:center;gap:clamp(20px,3vw,40px);padding-right:clamp(20px,3vw,40px);font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(28px,4vw,46px);color:#6B7F99;white-space:nowrap">{{ b.name }}<span style="width:10px;height:10px;border-radius:50%;background:{{ b.dot }}"></span></span>
+      </sc-for>
+    </div>
+  </div>
+  <p style="text-align:center;margin:28px auto 0;padding:0 20px;font-size:17px;color:#4B5563">Não achou a sua? <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20queria%20saber%20se%20voc%C3%AAs%20t%C3%AAm%20uma%20marca" target="_blank" rel="noopener" style="font-weight:800;color:#13926F" style-hover="color:#09448B">Pergunta no WhatsApp</a> que a gente consegue.</p>
+</section>
+
+<!-- BANHO E TOSA (opcional: remova este bloco ou desligue o tweak "showBanho") -->
+<sc-if value="{{ showBanho }}" hint-placeholder-val="{{ true }}">
+<section id="banho" style="position:relative;overflow:hidden;background:#E3F6EF;padding:clamp(72px,9vw,120px) 0">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+    <sc-for list="{{ bubbles }}" as="b" hint-placeholder-count="0">
+      <span style="position:absolute;bottom:-60px;left:{{ b.left }};width:{{ b.size }};height:{{ b.size }};border-radius:50%;border:2px solid rgba(255,255,255,.95);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(255,255,255,.15) 40%,rgba(27,182,140,.08));animation:{{ b.anim }}"></span>
+    </sc-for>
+  </div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,5vw,64px);align-items:center">
+      <div>
+        <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:0;text-wrap:balance">Banho tomado, rabinho abanando</h2>
+        <p data-reveal="up" data-delay="80" style="font-size:18px;line-height:1.6;color:#374151;margin:16px 0 0;max-width:30em;text-wrap:pretty">Banho, tosa e hidratação, com Táxi Dog: a gente busca e leva seu pet.</p>
+        <a data-reveal="up" data-delay="160" href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20banho%20e%20tosa" target="_blank" rel="noopener" style="margin-top:30px;display:inline-flex;align-items:center;gap:10px;background:#1BB68C;color:#fff;font-weight:800;font-size:18px;padding:17px 28px;border-radius:999px;box-shadow:0 12px 28px rgba(27,182,140,.35)" style-hover="background:#16a07b;color:#fff"><i class="ti ti-bath" style="font-size:22px"></i>Agendar banho</a>
+      </div>
+      <div data-reveal="zoom" style="border-radius:32px;overflow:hidden;aspect-ratio:5 / 4;box-shadow:0 24px 50px rgba(9,68,139,.18);border:6px solid #fff">
+        <img src="uploads/anexar-claude-design/banho-01_golden-pos-banho.jpg" alt="Golden retriever depois do banho" loading="lazy" width="1000" height="800" style="width:100%;height:100%;object-fit:cover;animation:kb 20s ease-in-out infinite alternate">
+      </div>
+    </div>
+    <div style="position:relative;margin-top:36px">
+      <div ref="{{ banhoRef }}" style="display:grid;grid-auto-flow:column;grid-auto-columns:clamp(220px,26%,300px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;scrollbar-width:none">
+        <sc-for list="{{ banhoPics }}" as="p" hint-placeholder-count="4">
+          <div data-reveal="up" data-delay="{{ p.delay }}" style="scroll-snap-align:start;border-radius:24px;overflow:hidden;aspect-ratio:4 / 5;background:#fff;box-shadow:0 12px 28px rgba(9,68,139,.1)">
+            <img src="{{ p.src }}" alt="{{ p.alt }}" loading="lazy" width="600" height="750" style="width:100%;height:100%;object-fit:cover">
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:8px">
+        <button onClick="{{ banhoPrev }}" aria-label="Anterior" style="width:48px;height:48px;border-radius:50%;border:2px solid #09448B;background:#fff;color:#09448B;display:grid;place-items:center;cursor:pointer"><i class="ti ti-chevron-left" style="font-size:22px"></i></button>
+        <button onClick="{{ banhoNext }}" aria-label="Próxima" style="width:48px;height:48px;border-radius:50%;border:0;background:#09448B;color:#fff;display:grid;place-items:center;cursor:pointer"><i class="ti ti-chevron-right" style="font-size:22px"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- DEPOIMENTOS -->
+<section style="background:#fff;padding:clamp(72px,9vw,120px) 0;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);text-align:center">
+    <div data-reveal="up" style="display:inline-flex;flex-direction:column;align-items:center;gap:6px;background:#FFF8EE;border-radius:28px;padding:24px 40px">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+        <strong style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(56px,7vw,80px);line-height:1;color:#09448B">4,7</strong>
+        <span style="position:relative;display:inline-flex;font-size:34px">
+          <span style="display:inline-flex;gap:2px;color:#E5E7EB"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></span>
+          <span data-stars="" style="position:absolute;inset:0;display:inline-flex;gap:2px;color:#F68121;clip-path:inset(0 6% 0 0)"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></span>
+        </span>
+      </div>
+      <span style="font-weight:800;font-size:17px;color:#374151">no Google · 76 avaliações</span>
+    </div>
+    <h2 data-reveal="up" data-delay="80" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:28px 0 0">O que dizem da gente</h2>
+  </div>
+  <div style="margin-top:40px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)">
+    <div style="display:flex;width:max-content;animation:marquee 60s linear infinite;padding:10px 0" style-hover="animation-play-state:paused">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="4">
+        <figure style="margin:0 20px 0 0;width:min(78vw,360px);flex:none;background:#FFF8EE;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;text-align:left">
+          <span style="display:flex;gap:2px;color:#F68121;font-size:18px"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></span>
+          <blockquote style="margin:0;font-size:17px;line-height:1.55;color:#1F2937;text-wrap:pretty">“{{ r.text }}”</blockquote>
+          <figcaption style="margin-top:auto;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:18px;color:#09448B">{{ r.name }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+  <p style="text-align:center;margin:28px 0 0;font-size:15px"><a href="https://www.google.com/maps/place/Mundo+Pet/@-23.0583591,-47.2266579,17z" target="_blank" rel="noopener" style="font-weight:800;color:#13926F" style-hover="color:#09448B">Já comprou com a gente? Avalie no Google</a></p>
+</section>
+
+<!-- NOSSAS LOJAS -->
+<section id="lojas" style="background:#FFF8EE;padding:clamp(72px,9vw,120px) 0;scroll-margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.02;color:#09448B;margin:0">Nossas lojas</h2>
+    <div style="margin-top:36px;display:grid;grid-template-columns:{{ storeCols }};gap:clamp(16px,2.4vw,28px);align-items:start">
+      <article data-reveal="up" style="background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 16px 40px rgba(9,68,139,.1)">
+        <div style="position:relative;aspect-ratio:16 / 9;overflow:hidden">
+          <img src="uploads/anexar-claude-design/loja-00_fachada-montreal-google.png" alt="Fachada da Polo Unidade 2 Montreal" loading="lazy" width="900" height="560" style="width:100%;height:100%;object-fit:cover;transform-origin:30% 62%;animation:kbDoor 24s ease-in-out infinite alternate">
+          <span style="position:absolute;left:16px;top:16px;background:#09448B;color:#fff;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px">Unidade 2 · Montreal</span>
+        </div>
+        <div style="padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div>
+              <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:28px;line-height:1.1;color:#09448B;margin:0">Polo Unidade 2 Montreal</h3>
+              <span style="font-size:14px;color:#4B5563">antiga Mundo Pet</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:{{ openBg }};color:{{ openColor }};font-weight:800;font-size:14px;padding:7px 12px;border-radius:999px"><span style="width:8px;height:8px;border-radius:50%;background:{{ openColor }}"></span>{{ openText }}</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;background:#FEF0E3;color:#B4560A;font-weight:800;font-size:14px;padding:7px 12px;border-radius:999px"><i class="ti ti-parking" style="font-size:17px"></i>Estacionamento fácil</span>
+            </div>
+            <p style="margin:0;display:flex;gap:10px;font-size:16px;line-height:1.5"><i class="ti ti-map-pin" style="font-size:20px;color:#1BB68C;margin-top:2px"></i><span>R. Winnipeg, 311 – Jardim Montreal Residence, Indaiatuba/SP – CEP 13332-111</span></p>
+            <div style="display:flex;gap:10px;font-size:16px;line-height:1.6"><i class="ti ti-clock" style="font-size:20px;color:#1BB68C;margin-top:3px"></i><span>Segunda a sexta, 8h às 18h30<br>Sábado, 8h às 15h<br>Domingo fechado</span></div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px">
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-23.0583591,-47.2266579" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#09448B;color:#fff;font-weight:800;font-size:15px;padding:12px 18px;border-radius:999px" style-hover="background:#073670;color:#fff"><i class="ti ti-route" style="font-size:19px"></i>Como chegar</a>
+              <a href="https://waze.com/ul?ll=-23.0583591,-47.2266579&amp;navigate=yes" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;border:2px solid #09448B;color:#09448B;font-weight:800;font-size:15px;padding:10px 16px;border-radius:999px" style-hover="background:#09448B;color:#fff"><i class="ti ti-brand-waze" style="font-size:19px"></i>Waze</a>
+              <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1BB68C;color:#fff;font-weight:800;font-size:15px;padding:12px 18px;border-radius:999px" style-hover="background:#16a07b;color:#fff"><i class="ti ti-brand-whatsapp" style="font-size:19px"></i>WhatsApp</a>
+            </div>
+          </div>
+          <div style="border-radius:20px;overflow:hidden;min-height:280px;background:#E5EEF7">
+            <iframe title="Mapa da Polo Unidade 2 Montreal" src="https://maps.google.com/maps?q=-23.0583591,-47.2266579&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:100%;min-height:280px;border:0;display:block"></iframe>
+          </div>
+        </div>
+      </article>
+      <article data-reveal="up" data-delay="120" style="background:#fff;border-radius:28px;padding:clamp(20px,3vw,32px);box-shadow:0 16px 40px rgba(9,68,139,.08);display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;background:#E3F6EF;color:#0E7A5C;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px">Unidade 1 · Santa Rita</span>
+        <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1;color:#09448B;margin:0">Polo Unidade 1 Santa Rita</h3>
+        <p style="margin:0;display:flex;gap:10px;font-size:16px;line-height:1.5"><i class="ti ti-map-pin" style="font-size:20px;color:#1BB68C;margin-top:2px"></i><span>Av. Bernadino Bonavita, 480 – Jardim Santa Rita, Indaiatuba/SP</span></p>
+        <a href="https://wa.me/5519986086407" target="_blank" rel="noopener" style="display:flex;gap:10px;align-items:center;font-size:16px;font-weight:700;color:#1F2937" style-hover="color:#13926F"><i class="ti ti-brand-whatsapp" style="font-size:20px;color:#1BB68C"></i>(19) 98608-6407</a>
+        <a href="tel:+551933925755" style="display:flex;gap:10px;align-items:center;font-size:16px;font-weight:700;color:#1F2937" style-hover="color:#13926F"><i class="ti ti-phone" style="font-size:20px;color:#1BB68C"></i>(19) 3392-5755</a>
+        <a href="https://wa.me/5519986086407" target="_blank" rel="noopener" style="margin-top:6px;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;border:2px solid #1BB68C;color:#0E7A5C;font-weight:800;font-size:15px;padding:10px 18px;border-radius:999px" style-hover="background:#1BB68C;color:#fff"><i class="ti ti-brand-whatsapp" style="font-size:19px"></i>WhatsApp Santa Rita</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contato" style="position:relative;overflow:hidden;background:#09448B;color:#fff;padding:clamp(88px,11vw,140px) 0;text-align:center;scroll-margin-top:60px">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;color:#1BB68C">
+    <sc-for list="{{ paws }}" as="p" hint-placeholder-count="0">
+      <i class="ti ti-paw-filled" style="position:absolute;left:{{ p.left }};top:{{ p.top }};font-size:34px;rotate:{{ p.rot }};opacity:0;animation:{{ p.anim }}"></i>
+    </sc-for>
+  </div>
+  <div style="position:relative;max-width:860px;margin:0 auto;padding:0 clamp(20px,4vw,40px)">
+    <h2 data-reveal="up" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:1;margin:0;text-wrap:balance">Sua ração está acabando? <span style="color:#6FDDBE">A gente leva hoje.</span></h2>
+    <a data-reveal="up" data-delay="120" href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" style="margin-top:36px;display:inline-flex;align-items:center;gap:12px;background:#F68121;color:#fff;font-weight:800;font-size:clamp(19px,2vw,22px);padding:20px 36px;border-radius:999px;box-shadow:0 16px 36px rgba(246,129,33,.4)" style-hover="background:#e5700f;color:#fff"><i class="ti ti-brand-whatsapp" style="font-size:28px"></i>Pedir no WhatsApp</a>
+    <p data-reveal="up" data-delay="200" style="margin:22px 0 0;font-size:17px;font-weight:700;color:rgba(255,255,255,.85)">Seg a sex 8h–18h30 · Sáb 8h–15h</p>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer style="background:#09448B;color:rgba(255,255,255,.88);border-top:1px solid rgba(255,255,255,.12);padding:56px 0 32px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <img src="uploads/anexar-claude-design/logo-polo_cor_transparente.png" alt="Polo Pet Shop e Agro" loading="lazy" width="150" height="103" style="width:150px;height:auto">
+      <p style="margin:0;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:20px;color:#fff">Seu pet muito bem cuidado!</p>
+      <a href="https://www.instagram.com/polopetshopeagro" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700" style-hover="color:#7FE0C4"><i class="ti ti-brand-instagram" style="font-size:22px"></i>@polopetshopeagro</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5">
+      <strong style="font-family:'Baloo 2',sans-serif;font-size:18px;color:#fff">Unidade 2 Montreal</strong>
+      <span>R. Winnipeg, 311 – Jardim Montreal Residence, Indaiatuba/SP – CEP 13332-111</span>
+      <a href="https://wa.me/5519996247872" target="_blank" rel="noopener" style="color:#fff;font-weight:700" style-hover="color:#7FE0C4">WhatsApp (19) 99624-7872</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5">
+      <strong style="font-family:'Baloo 2',sans-serif;font-size:18px;color:#fff">Unidade 1 Santa Rita</strong>
+      <span>Av. Bernadino Bonavita, 480 – Jardim Santa Rita, Indaiatuba/SP</span>
+      <a href="https://wa.me/5519986086407" target="_blank" rel="noopener" style="color:#fff;font-weight:700" style-hover="color:#7FE0C4">WhatsApp (19) 98608-6407</a>
+      <a href="tel:+551933925755" style="color:#fff;font-weight:700" style-hover="color:#7FE0C4">Telefone (19) 3392-5755</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5">
+      <strong style="font-family:'Baloo 2',sans-serif;font-size:18px;color:#fff">Horário</strong>
+      <span>Segunda a sexta, 8h às 18h30<br>Sábado, 8h às 15h<br>Domingo fechado</span>
+    </div>
+  </div>
+  <p style="max-width:1240px;margin:40px auto 0;padding:24px clamp(20px,4vw,40px) 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.7)">© 2026 Polo Pet Shop &amp; Agro · Indaiatuba/SP</p>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<div style="position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:12px">
+  <div role="status" style="background:#fff;color:#1F2937;font-weight:800;font-size:15px;padding:12px 16px;border-radius:18px 18px 4px 18px;box-shadow:0 12px 30px rgba(9,68,139,.2);opacity:{{ tipOp }};transform:{{ tipT }};transition:opacity .4s ease, transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none;max-width:62vw">Pede que a gente entrega hoje 🐾</div>
+  <a href="https://wa.me/5519996247872?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp" style="flex:none;width:62px;height:62px;border-radius:50%;background:#1BB68C;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px rgba(27,182,140,.45)" style-hover="background:#16a07b;color:#fff"><i class="ti ti-brand-whatsapp" style="font-size:34px"></i></a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showBanho&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;animacoes&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;completas&quot;,&quot;reduzidas&quot;],&quot;default&quot;:&quot;completas&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Movimento&quot;}}">
+const B = 'uploads/anexar-claude-design/';
+const WA = 'https://wa.me/5519996247872?text=';
+const PETS = [['Cachorro','ti-dog','meu cachorro'],['Gato','ti-cat','meu gato'],['Coelho/roedor','ti-carrot','meu coelho/roedor'],['Pássaro','ti-feather','meu pássaro'],['Peixe','ti-fish','meu peixe']];
+const NEEDS = [['Ração','ti-bowl'],['Petisco/sachê','ti-bone'],['Remédio/antipulgas','ti-pill'],['Areia/higiene','ti-sparkles'],['Acessório','ti-ball-tennis'],['Piscina','ti-pool'],['Jardim','ti-plant-2']];
+const CATS = [
+  { title:'Cães', desc:'Ração, petisco, coleira, cama e brinquedo.', img:'cao-01_guia-na-boca.jpg', icon:'ti-dog', color:'#F68121' },
+  { title:'Gatos', desc:'Ração, sachê, areia, arranhador e catnip.', img:'gato-02_gatinho-varinha-pena.jpg', icon:'ti-cat', color:'#BC3091' },
+  { title:'Pequenos pets e peixes', desc:'Coelho, roedor, calopsita e aquário.', img:'pequeno-03_coelho-cenoura.jpg', alt:'loja-09_aquarios-peixes.jpg', icon:'ti-fish', color:'#0793C8' },
+  { title:'Farmácia vet', desc:'Vermífugo, antipulgas e medicamento.', img:'farm-01_prateleira-farmacia.jpg', icon:'ti-first-aid-kit', color:'#1BB68C' },
+  { title:'Piscina', desc:'Cloro, algicida e tudo pra água limpinha.', pool:true, icon:'ti-pool', color:'#09448B' },
+  { title:'Jardim e horta', desc:'Muda, semente, adubo e inseticida.', img:'agro-02_sementes.jpg', icon:'ti-plant-2', color:'#8CC640' },
+];
+const G = {
+  '01': { src:'loja-01_racao-a-granel-dispensers.jpg', label:'Ração a granel', ar:'3 / 4', big:true },
+  '02': { src:'loja-02_corredor-racoes.jpg', label:'Corredor de rações', ar:'1 / 1' },
+  '03': { src:'loja-03_estante-racoes-casinhas.jpg', label:'Rações e casinhas', ar:'2 / 3' },
+  '04': { src:'loja-04_prateleira-acessorios.jpg', label:'Acessórios', ar:'1 / 1' },
+  '05': { src:'loja-05_corredor-biofresh.jpg', label:'Corredor Biofresh', ar:'4 / 3' },
+  '06': { src:'loja-06_racoes-premium-nd.jpg', label:'Rações premium', ar:'4 / 3' },
+  '08': { src:'loja-08_display-golden-gatos.jpg', label:'Display Golden Gatos', ar:'1 / 1' },
+  '09': { src:'loja-09_aquarios-peixes.jpg', label:'Aquários', ar:'3 / 4', big:true },
+};
+const G_ORDER = ['01','02','03','09','05','06','04','08'];
+const COLS_D = [{ ids:['01','05','08'], speed:'0.04', pad:'0px' }, { ids:['02','09','06'], speed:'-0.06', pad:'48px' }, { ids:['03','04'], speed:'0.08', pad:'16px' }];
+const COLS_M = [{ ids:['01','05','08','03'], speed:'0.03', pad:'0px' }, { ids:['02','09','06','04'], speed:'-0.04', pad:'36px' }];
+const BRANDS = ['PremieR','Golden','Biofresh','Farmina N&D','Guabi Natural','Magnus','Origens','Special Dog','NexGard','Simparic','Seresto','Sanol','HTH','Genco'];
+const DOTS = ['#F68121','#0793C8','#BC3091','#8CC640','#1BB68C'];
+const REVIEWS = [
+  { text:'O melhor petshop da região! Sempre encontro o que eu preciso, além do super atendimento do veterinário.', name:'Pietra M.' },
+  { text:'Primeira vez que compro pelo WhatsApp. Entregaram no mesmo dia e apresentaram os produtos e preços por fotos. Eu e meu marido já viramos clientes.', name:'Bruna G.' },
+  { text:'Variedade para todos os pets, atendimento com muita cordialidade e ótimo estacionamento.', name:'Vera A.' },
+  { text:'Preço e atendimento nota 10.', name:'Ricardo C.' },
+];
+const BANHO = [['banho-02_spitz-gravatinha.jpg','Spitz de gravatinha depois do banho'],['banho-03_trio-spitz.jpg','Trio de spitz'],['banho-04_yorkshire-molhado.jpg','Yorkshire no banho'],['banho-05_border-collie-painel-polo.jpg','Border collie no painel da Polo']];
+const BUBBLES = Array.from({ length: 14 }, (_, i) => ({ left: ((i * 7.3 + 3) % 98) + '%', size: (14 + (i * 13) % 34) + 'px', anim: `rise ${12 + (i * 7) % 10}s linear ${-(i * 1.9).toFixed(1)}s infinite` }));
+const PAWS = Array.from({ length: 12 }, (_, i) => ({ left: (6 + i * 8 + (i % 2 ? 2 : -2)) + '%', top: (86 - i * 7.2 + (i % 2 ? -2 : 2)) + '%', rot: '40deg', anim: `pawStep 7s ease-in-out ${(i * 0.45).toFixed(2)}s infinite` }));
+const SCHEMA = [
+  { '@context':'https://schema.org', '@type':['PetStore','VeterinaryCare'], name:'Polo Pet Shop & Agro · Unidade 2 Montreal', alternateName:'Mundo Pet', telephone:'+55-19-99624-7872', url:'https://www.instagram.com/polopetshopeagro', image:B+'loja-00_fachada-montreal-google.png',
+    address:{ '@type':'PostalAddress', streetAddress:'R. Winnipeg, 311 – Jardim Montreal Residence', addressLocality:'Indaiatuba', addressRegion:'SP', postalCode:'13332-111', addressCountry:'BR' },
+    geo:{ '@type':'GeoCoordinates', latitude:-23.0583591, longitude:-47.2266579 },
+    openingHoursSpecification:[{ '@type':'OpeningHoursSpecification', dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'], opens:'08:00', closes:'18:30' },{ '@type':'OpeningHoursSpecification', dayOfWeek:'Saturday', opens:'08:00', closes:'15:00' }],
+    aggregateRating:{ '@type':'AggregateRating', ratingValue:'4.7', reviewCount:'76' } },
+  { '@context':'https://schema.org', '@type':'PetStore', name:'Polo Pet Shop & Agro · Unidade 1 Santa Rita', telephone:'+55-19-3392-5755',
+    address:{ '@type':'PostalAddress', streetAddress:'Av. Bernadino Bonavita, 480 – Jardim Santa Rita', addressLocality:'Indaiatuba', addressRegion:'SP', addressCountry:'BR' } },
+];
+
+function spNow() {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone:'America/Sao_Paulo', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false }).formatToParts(new Date());
+  const get = t => (parts.find(p => p.type === t) || {}).value;
+  const wd = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+  const h = +get('hour') % 24, m = +get('minute');
+  return { wd, mins: h * 60 + m, hh: String(h).padStart(2,'0'), mm: String(m).padStart(2,'0') };
+}
+function openStatus() {
+  const { wd, mins } = spNow();
+  const close = wd >= 1 && wd <= 5 ? 1110 : wd === 6 ? 900 : 0;
+  if (close && mins >= 480 && mins < close) return { open:true, text: 'Aberto agora · fecha às ' + (wd === 6 ? '15h' : '18h30') };
+  if (close && mins < 480) return { open:false, text:'Fechado agora · abre hoje às 8h' };
+  if (wd === 6 || wd === 0) return { open:false, text:'Fechado agora · abre segunda às 8h' };
+  return { open:false, text:'Fechado agora · abre amanhã às 8h' };
+}
+
+class Component extends DCLogic {
+  state = { isMobile: typeof window !== 'undefined' && window.innerWidth < 900, scrolled:false, menu:false, pet:'', needs:[], brand:'', mode:'', bairro:'', hoverCat:-1, lb:-1, tip:false };
+  banhoRef = React.createRef();
+
+  componentDidMount() {
+    this.seen = new WeakSet();
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || this.props.animacoes === 'reduzidas';
+    this.onResize = () => { const m = window.innerWidth < 900; if (m !== this.state.isMobile) this.setState({ isMobile:m, menu:false }); };
+    this.onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled:s });
+      if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.parallax(); });
+    };
+    this.onMouse = e => {
+      if (this.reduce || this.state.isMobile) return;
+      const x = e.clientX / window.innerWidth - .5, y = e.clientY / window.innerHeight - .5;
+      document.querySelectorAll('[data-mouse]').forEach(el => { const n = +el.dataset.mouse; el.style.translate = `${(x * n).toFixed(1)}px ${(y * n).toFixed(1)}px`; });
+    };
+    this.onKey = e => {
+      if (this.state.lb < 0) return;
+      if (e.key === 'Escape') this.setState({ lb:-1 });
+      if (e.key === 'ArrowRight') this.stepLb(1);
+      if (e.key === 'ArrowLeft') this.stepLb(-1);
+    };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive:true });
+    window.addEventListener('mousemove', this.onMouse, { passive:true });
+    window.addEventListener('keydown', this.onKey);
+    this.io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      this.io.unobserve(en.target);
+      this.play(en.target);
+    }), { threshold:.15, rootMargin:'0px 0px -6% 0px' });
+    this.scan();
+    this.intro();
+    this.parallax();
+    this.t1 = setTimeout(() => this.setState({ tip:true }), 8000);
+    this.t2 = setTimeout(() => this.setState({ tip:false }), 14500);
+    this.clock = setInterval(() => this.forceUpdate(), 60000);
+    if (!document.getElementById('polo-schema')) {
+      const s = document.createElement('script');
+      s.type = 'application/ld+json'; s.id = 'polo-schema'; s.textContent = JSON.stringify(SCHEMA);
+      document.head.appendChild(s);
+    }
+  }
+  componentDidUpdate() { this.scan(); }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('mousemove', this.onMouse);
+    window.removeEventListener('keydown', this.onKey);
+    this.io && this.io.disconnect();
+    clearTimeout(this.t1); clearTimeout(this.t2); clearInterval(this.clock);
+  }
+
+  scan() {
+    if (!this.seen) return;
+    document.querySelectorAll('[data-reveal],[data-counter],[data-clip],[data-stars],[data-tilt]').forEach(el => {
+      if (this.seen.has(el)) return;
+      this.seen.add(el);
+      if (el.hasAttribute('data-tilt')) this.bindTilt(el);
+      if (this.reduce) return;
+      const kind = el.dataset.reveal || (el.hasAttribute('data-counter') ? 'counter' : el.hasAttribute('data-clip') ? 'clip' : el.hasAttribute('data-stars') ? 'stars' : null);
+      if (!kind) return;
+      el._kind = kind;
+      if (kind === 'counter') el.textContent = '0';
+      else { el._anim = this.mk(el, kind); el._anim.pause(); }
+      this.io.observe(el);
+    });
+  }
+  mk(el, kind) {
+    const delay = +(el.dataset.delay || 0);
+    let kf, duration = 750;
+    if (kind === 'zoom') kf = [{ opacity:0, transform:'scale(.92)' }, { opacity:1, transform:'scale(1)' }];
+    else if (kind === 'clip') { kf = [{ clipPath:'inset(14% 42% 14% 42% round 999px)' }, { clipPath:'inset(0% 0% 0% 0% round 28px)' }]; duration = 1300; }
+    else if (kind === 'stars') { kf = [{ clipPath:'inset(0 100% 0 0)' }, { clipPath:'inset(0 6% 0 0)' }]; duration = 1600; }
+    else kf = [{ opacity:0, transform:'translateY(24px)' }, { opacity:1, transform:'translateY(0)' }];
+    const a = el.animate(kf, { duration, delay, easing:'cubic-bezier(.2,.7,.2,1)', fill:'both' });
+    a.onfinish = () => a.cancel();
+    return a;
+  }
+  play(el) {
+    if (el._kind === 'counter') {
+      const target = +el.dataset.counter, t0 = performance.now(), dur = 1600;
+      const tick = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    } else if (el._anim) el._anim.play();
+  }
+  bindTilt(el) {
+    el.style.transition = 'transform .3s ease-out';
+    el.addEventListener('mousemove', e => {
+      if (this.reduce || this.state.isMobile) return;
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      el.style.transform = `perspective(900px) rotateX(${(-y * 12).toFixed(2)}deg) rotateY(${(x * 12).toFixed(2)}deg)`;
+    });
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+  }
+  parallax() {
+    if (this.reduce) return;
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-parallax]').forEach(el => {
+      const r = (el.parentElement || el).getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      const off = r.top + r.height / 2 - vh / 2;
+      el.style.translate = `0 ${(-off * +el.dataset.parallax).toFixed(1)}px`;
+    });
+  }
+  intro() {
+    if (this.reduce) return;
+    const path = document.querySelector('[data-underline] path');
+    if (path) path.animate([{ strokeDashoffset:1 }, { strokeDashoffset:0 }], { duration:900, delay:1000, easing:'cubic-bezier(.6,0,.3,1)', fill:'both' });
+    const ball = document.querySelector('[data-ball]');
+    if (ball) ball.animate([
+      { transform:'translate(-140px,-340px) rotate(-260deg)', opacity:0, easing:'cubic-bezier(.55,0,1,.45)' },
+      { transform:'translate(-50px,0) rotate(-90deg)', opacity:1, offset:.45, easing:'cubic-bezier(0,.55,.45,1)' },
+      { transform:'translate(-18px,-70px) rotate(-30deg)', offset:.72, easing:'cubic-bezier(.55,0,1,.45)' },
+      { transform:'translate(0,0) rotate(0deg)', opacity:1, offset:1 },
+    ], { duration:1500, delay:450, fill:'both' });
+  }
+  stepLb(d) { const n = G_ORDER.length; this.setState(s => ({ lb: (s.lb + d + n) % n })); }
+  pop(e) {
+    if (this.reduce || !e || !e.currentTarget) return;
+    e.currentTarget.animate([{ transform:'scale(1)' }, { transform:'scale(.9)' }, { transform:'scale(1.07)' }, { transform:'scale(1)' }], { duration:380, easing:'ease-out' });
+  }
+  chip(on, label, icon, onClick) {
+    return { label, icon, on, onClick, bg: on ? '#1BB68C' : '#fff', color: on ? '#fff' : '#09448B', border: on ? '#1BB68C' : '#D5E6E0' };
+  }
+  message() {
+    const { pet, needs, brand, mode, bairro } = this.state;
+    const p = PETS.find(x => x[0] === pet);
+    let s = 'Olá! Vim pelo site.';
+    const b = brand.trim();
+    if (p || needs.length || b) {
+      s += ' Quero pedir' + (p ? ' pra ' + p[2] : '');
+      const items = needs.join(', ');
+      if (items || b) s += ': ' + (items ? items + (b ? ' (' + b + ')' : '') : b);
+      s += '.';
+    }
+    if (mode === 'entrega') s += bairro.trim() ? ' Entregar no bairro ' + bairro.trim() + '.' : ' Quero receber em casa.';
+    if (mode === 'retirada') s += ' Vou retirar na loja.';
+    return s;
+  }
+
+  renderVals() {
+    const st = this.state, mob = st.isMobile;
+    const msg = this.message();
+    const empty = !st.pet && !st.needs.length && !st.brand.trim() && !st.mode;
+    const os = openStatus(), now = spNow();
+    const cols = (mob ? COLS_M : COLS_D).map(c => ({ speed:c.speed, pad:c.pad, items: c.ids.map(id => {
+      const g = G[id];
+      return { src:B + g.src, label:g.label, ar:g.ar, big:!!g.big, anim: g.big ? 'kb 20s ease-in-out infinite alternate' : 'none', open: () => this.setState({ lb: G_ORDER.indexOf(id) }) };
+    }) }));
+    const lbItem = st.lb >= 0 ? G[G_ORDER[st.lb]] : null;
+    return {
+      motion: this.props.animacoes === 'reduzidas' ? 'off' : 'on',
+      showBanho: this.props.showBanho ?? true,
+      isMobile: mob, isDesktop: !mob,
+      headerBg: st.scrolled || st.menu ? '#09448B' : 'rgba(9,68,139,0)',
+      headerShadow: st.scrolled ? '0 10px 30px rgba(4,30,64,.25)' : 'none',
+      headerPad: st.scrolled ? '8px 0' : (mob ? '12px 0' : '18px 0'),
+      logoScale: st.scrolled ? 'scale(.82)' : 'scale(1)',
+      nav: [{ label:'Produtos', href:'#produtos' }, { label:'Veterinário', href:'#veterinario' }, { label:'A loja', href:'#loja' }, { label:'Lojas', href:'#lojas' }, { label:'Contato', href:'#contato' }],
+      openMenu: () => this.setState({ menu:true }), closeMenu: () => this.setState({ menu:false }),
+      menuT: st.menu ? 'translateX(0)' : 'translateX(105%)', menuOverlayOp: st.menu ? 1 : 0, menuPE: st.menu ? 'auto' : 'none',
+      heroMinH: mob ? 'auto' : '100svh', heroPad: mob ? '0 0 120px' : '130px 0 150px',
+      heroCols: mob ? '1fr' : 'minmax(0,1.05fr) minmax(0,.95fr)',
+      ballRight: mob ? '4px' : '6%', ballTop: mob ? '-6px' : '6px',
+      scrollCueB: mob ? '78px' : '86px',
+      trust: [
+        { icon:'ti-moped', bg:'#FEF0E3', color:'#F68121', title:'Entrega no mesmo dia', pre:'Pediu, chegou hoje', sub:'', count:'', delay:'0' },
+        { icon:'ti-stethoscope', bg:'#E3F6EF', color:'#13926F', title:'Veterinário na loja', pre:'Consultas e vacinas', sub:'', count:'', delay:'90' },
+        { icon:'ti-bowl', bg:'#F7E6F1', color:'#BC3091', title:'Ração a granel', pre:'Compre só o que precisa', sub:'', count:'', delay:'180' },
+        { icon:'ti-star', bg:'#E2F3FA', color:'#0793C8', title:'4,7 no Google', pre:'', sub:' avaliações', count:'76', delay:'270' },
+      ],
+      orderCols: mob ? '1fr' : 'minmax(0,1.3fr) minmax(0,.85fr)',
+      bubbleTop: mob ? '0px' : '-120px',
+      petChips: PETS.map(([l, ic]) => this.chip(st.pet === l, l, ic, e => { this.pop(e); this.setState(s => ({ pet: s.pet === l ? '' : l })); })),
+      needChips: NEEDS.map(([l, ic]) => this.chip(st.needs.includes(l), l, ic, e => { this.pop(e); this.setState(s => ({ needs: s.needs.includes(l) ? s.needs.filter(x => x !== l) : NEEDS.map(n => n[0]).filter(x => x === l || s.needs.includes(x)) })); })),
+      modeChips: [['entrega','Entregar em casa','ti-moped'], ['retirada','Retirar na loja','ti-building-store']].map(([k, l, ic]) => this.chip(st.mode === k, l, ic, e => { this.pop(e); this.setState(s => ({ mode: s.mode === k ? '' : k })); })),
+      isDelivery: st.mode === 'entrega',
+      brand: st.brand, bairro: st.bairro,
+      onBrand: e => this.setState({ brand: e.target.value }),
+      onBairro: e => this.setState({ bairro: e.target.value }),
+      preview: empty ? 'Escolha as opções e seu pedido aparece aqui, prontinho pra enviar.' : msg,
+      msgColor: empty ? '#6B7280' : '#1F2937',
+      nowTime: now.hh + ':' + now.mm,
+      orderHref: WA + encodeURIComponent(msg),
+      cats: CATS.map((c, i) => ({
+        ...c, delay: String(i * 80), photo: !c.pool, img: c.img ? B + c.img : '', alt: !!c.alt, altImg: c.alt ? B + c.alt : '',
+        altOp: st.hoverCat === i ? 1 : 0, imgT: st.hoverCat === i ? 'scale(1.08)' : 'scale(1)', photoBg: c.pool ? '#0793C8' : '#EEF2F6',
+        href: WA + encodeURIComponent('Olá! Vim pelo site e quero pedir produtos de ' + c.title + '.'),
+        onEnter: e => { this.setState({ hoverCat:i }); if (!this.reduce && e && e.currentTarget) { const ic = e.currentTarget.querySelector('[data-icon]'); ic && ic.animate([{ transform:'translateY(0)' }, { transform:'translateY(-12px)' }, { transform:'translateY(0)' }, { transform:'translateY(-4px)' }, { transform:'translateY(0)' }], { duration:650, easing:'ease-out' }); } },
+        onLeave: () => this.setState({ hoverCat:-1 }),
+      })),
+      catReveal: mob ? 'zoom' : 'up',
+      catFlow: mob ? 'column' : 'row', catCols: mob ? 'none' : 'repeat(3,minmax(0,1fr))', catAutoCols: mob ? '80%' : 'auto', catOverflow: mob ? 'auto' : 'visible',
+      vetList: ['Consultas','Vacinas importadas','Vermifugação e antipulgas','Farmácia completa'].map((label, i) => ({ label, delay: String(120 + i * 70) })),
+      galleryCols: cols,
+      lbOpen: st.lb >= 0, lbSrc: lbItem ? B + lbItem.src : '', lbLabel: lbItem ? lbItem.label : '',
+      closeLb: e => { if (e && e.target !== e.currentTarget && e.target.tagName === 'IMG') return; this.setState({ lb:-1 }); },
+      prevLb: e => { e.stopPropagation(); this.stepLb(-1); },
+      nextLb: e => { e.stopPropagation(); this.stepLb(1); },
+      brands: BRANDS.concat(BRANDS).map((name, i) => ({ name, dot: DOTS[i % DOTS.length] })),
+      bubbles: BUBBLES,
+      banhoRef: this.banhoRef,
+      banhoPics: BANHO.map(([f, alt], i) => ({ src:B + f, alt, delay:String(i * 80) })),
+      banhoPrev: () => this.banhoRef.current && this.banhoRef.current.scrollBy({ left:-300, behavior:'smooth' }),
+      banhoNext: () => this.banhoRef.current && this.banhoRef.current.scrollBy({ left:300, behavior:'smooth' }),
+      reviews: REVIEWS.concat(REVIEWS),
+      storeCols: mob ? '1fr' : 'minmax(0,1.75fr) minmax(0,1fr)',
+      openText: os.text, openBg: os.open ? '#E3F6EF' : '#FDECEC', openColor: os.open ? '#0E7A5C' : '#B42318',
+      paws: PAWS,
+      tipOp: st.tip ? 1 : 0, tipT: st.tip ? 'translateX(0)' : 'translateX(12px)',
+    };
+  }
+}
+</script>
+</body>
+</html>
